@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+    <h3>Formulario</h3>
+    <!--Creamos un formulario de la siguiente manera-->
+    <form action="forms.php" method="post">
+        <!--El elemento principal de un formulario es input y pueder ser:
+        - Controles de formulario       - Campos de formulario
+        La etiqueta input tiene lis siguientes atributos:
+        - Type (text,password,checkbox,radio,submit,reset,file,hidden,image,button)
+        - Name (asigna un nombre al elemento)
+        - Value (inicializa el valor del elemento)
+        - Size (asigna el tamaño inicial del elemento en píxeles)
+        - Maxhlength (indica el número máximo de caracteres de text y password)
+        Además tambien tiene los siguientes atributos:
+        - Checked (Para checkbox y radio que define la opción por defecto)
+        - Disable (Deshabilita el elemento)
+        - Readonly (El valor de este elemento no se podrá modificar)
+        - src (Para asignar una URL a un image)
+        - alt (Incluye una pequeña descripción del elemento)
+        -->
+        <!--Tipos de input-->
+        <!--Text-->
+        <input type="text" name="nombre"/>
+        <!--Password-->
+        <input type="password" name="contrasenia"/>
+        <!--Checkbox-->
+        <!--Otros elementos del formulario son los label que introducen
+        texto y nos referimos a ellos con el atributo for-->
+        <br/><label for="coloresfavoritos">Colores favoritos </label>
+        <br/><input type="checkbox" name="rojo" value="ro"/>Rojo
+        <br/><input type="checkbox" name="azul" value="az"/>Azul
+        <br/><input type="checkbox" name="verde" value="ve"/>Verde
+        <!--Radio-->
+        <br/><label for="genero">Género </label>
+        <br/><input type="radio" name="masculino" value="M"/>Hombre
+        <br/><input type="radio" name="femenino" value="F"/>Mujer
+        <!--Submit-->
+        <br/><input type="submit" name="enviar" value="Enviar"/>
+        <!--Reset-->
+        <br/><input type="reset" name="Restablecer"/>
+        <!--File-->
+        <br/><label for="ficheroadjunto">Fichero adjunto </label>
+        <br/><input type="file" name="fichero"/>
+        <!--Hidden-->
+        <br/><input type="hidden" name="campooculto" value="Cambiar"/>
+        <!--Image-->
+        <br/><input type="image" name="enviar" src="imagen"/>
+        <!--Button-->
+        <br/><input type="button" name="opcion" value="Validar"/>
+        <!--También puedes añadir clases a los elementos de un formulario
+        para añadir estilos-->
+        <br/><input type="text" value="Texto" class="red"/>
+        <br/><input type="text" value="Texto" class="blue"/>
+        <br/><input type="text" value="Texto" class="green"/>
+    </form>
+</body>
+</html>

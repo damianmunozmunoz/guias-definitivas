@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condicionales</title>
+</head>
+
+<body>
+    <script>
+        function comprobar() {
+            //Con document nos referimos al documento en general
+            //Con getElementById nos referimos por id a un elemento html
+            //Con value accedemos al valor del elemento
+            let numero = document.getElementById("caja").value;
+            numero = parseInt(numero);
+            /*  if(numero<18){
+                 alert ("Este número es menor de 18");
+             } else if(numero>18){
+                 alert ("Este número es mayor de 18");
+             } else{
+                 alert("Este número es igual a 18");
+             } */
+            (numero < 18) ? alert(" es menor de 18") : alert(" es mayor o igual de 18");   //Con esto conseguimos lo mismo que en las lineas de arriba
+        }
+        
+        function mayormenor18() {
+            let numero = document.getElementById("caja").value;
+            numero = parseInt(numero);
+            if (numero < 18) {
+                alert("Este número es menor de 18");
+            } else if (numero > 18) {
+                alert("Este número es mayor de 18");
+            } else {
+                alert("Este número es igual a 18");
+            }
+        }
+
+        function parimpar() {
+            let numero = document.getElementById("caja").value;
+            numero = parseInt(numero);
+            if (numero % 2 == 0) {
+                alert("Este número es par");
+            } else if (numero % 2 == 1) {
+                alert("Este número es impar");
+            } else {
+                alert("Este número es 0");
+            }
+        }
+
+        function comprobarnota(){
+            let numero=document.getElementById("nota").value;
+            numero=parseInt(numero);
+            switch(numero){
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    alert("Suspenso")
+                    break;
+                case 5:
+                    alert("Suficiente")
+                    break;
+                case 6:
+                    alert("Bien")
+                    break;
+                case 7:
+                case 8:
+                    alert("Notable")
+                    break;
+                case 9:
+                case 10:
+                    alert("Sobresaliente")
+                    break;
+                default:
+                    alert("Nota mal introducida")
+            }
+        }
+    </script>
+    <input type="number" id="caja">
+    <!--Con onclick decidimos que sucederá al pulsar el botón-->
+    <input type="button" value="Comprobar" onclick="comprobar()">
+    <input type="button" value="Par o impar" onclick="parimpar()">
+    <input type="number" id="nota" size="2" min="0" max="10">
+    <input type="button" value="Pulsar" onclick="comprobarnota()">
+</body>
+
+</html>

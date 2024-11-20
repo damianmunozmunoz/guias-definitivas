@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+
+<body>
+    <input type="button" value="Redondeo normal" id="round">
+    <input type="button" value="Redondeo hacia abajo" id="floor">
+    <input type="button" value="Redondeo hacia arriba" id="ceil">
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        /*random genera un número aleatorio entre 0 y 1
+        pero podemos usar las siguientes fórmulas para generar
+        los números que nosotros queramos:
+        - Entre 0 y n
+          (Math.random() * n)
+        - Entre min y max
+          (Math.random() * (max - min + 1)) + min
+          */
+        let numero = (Math.random()*(10-1+1))+1
+        alert(numero)
+        console.log("Número aleatorio generado: ",numero)
+        const round = document.querySelector("#round")
+        round.addEventListener("click", () => {
+            //round redondea normal
+            console.log("Math.round: ", Math.round(numero))
+        })
+
+        const floor = document.querySelector("#floor")
+        floor.addEventListener("click", () => {
+            //floor redondea hacia abajo
+            console.log("Math.floor: ", Math.floor(numero))
+        })
+
+        const ceil = document.querySelector("#ceil")
+        ceil.addEventListener("click", () => {
+            //ceil redondea hacia arriba
+            console.log("Math.ceil: ", Math.ceil(numero))
+        })
+    })
+</script>
+
+</html>

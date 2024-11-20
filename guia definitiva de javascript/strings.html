@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strings</title>
+</head>
+
+<body>
+    <div class="cajatexto"></div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        mensaje = "Mensaje De Prueba"
+        mayusculas = mensaje.toUpperCase() //mayúsculas
+        minusculas = mensaje.toLowerCase() //minúsculas
+        array = mensaje.split(" ") //array con las palabras de la frase
+        parte = mensaje.substring(1, 5) //inicio y fin
+        parte2 = mensaje.substr(1, 10) //inicio y nº caracteres
+        parte3 = mensaje.substring(2, -1) //va al reves
+        posicion = mensaje.indexOf("s") //posición de la primera s
+        posicion2 = mensaje.lastIndexOf("e") //posición de la última e
+        posicionconcreta = mensaje.charAt(2) //caracter en la posición 2
+        reemplazo = mensaje.replace("Prueba", "Damián") //reemplaza el 1º x el 2º
+    })
+</script>
+
+</html>

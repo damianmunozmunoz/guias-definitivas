@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    background-color: blue;
+}
+
+/*Sirven para introducit condicionales en CSS
+En el siguiente ejemplo si el ancho de la página
+se reduce a menos de 700 píxeles y el alto a menos
+de 400 el fondo se volverá rojo*/
+@media(max-width:700px) and (max-height: 400px){
+    *{
+        background-color: red;
+    }
+}

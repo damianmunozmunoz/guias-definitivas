@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classlist</title>
+    <style>
+        #caja {
+            width: 100px;
+            height: 100px;
+        }
+
+        .conborde {
+            border: 3px black solid;
+        }
+
+        .conbordepuntos {
+            border: 3px black dotted;
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+        .rojo {
+            background-color: red;
+        }
+
+        .amarillo {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="caja"></div>
+    <br><input type="button" value="Alternar borde" id="borde">
+    <input type="button" value="Borde con puntos" id="puntos">
+    <input type="button" value="Borde sin puntos" id="sinpuntos">
+    <input type="button" value="Poner verde" id="verde">
+    <input type="button" value="Poner rojo" id="rojo">
+    <input type="button" value="Poner amarillo" id="amarillo">
+    <input type="button" value="Poner azul" id="azul">
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const caja = document.querySelector("#caja")
+        const botonborde = document.querySelector("#borde")
+        botonborde.addEventListener("click", () => {
+            //Alterna una clase entre activada y desactivada
+            caja.classList.toggle("conborde")
+        })
+
+        const botonpuntos = document.querySelector("#puntos")
+        botonpuntos.addEventListener("click", () => {
+            //Reemplaza la primera clase por la segunda
+            caja.classList.replace("conborde", "conbordepuntos")
+        })
+
+        const botonsinpuntos = document.querySelector("#sinpuntos")
+        botonsinpuntos.addEventListener("click", () => {
+            caja.classList.replace("conbordepuntos", "conborde")
+        })
+
+        const botonverde = document.querySelector("#verde")
+        botonverde.addEventListener("click", () => {
+            //Elimina una o varias clases
+            caja.classList.remove("rojo", "amarillo", "azul")
+            //Añade una o varias clases
+            caja.classList.add("verde")
+        })
+
+        const botonrojo = document.querySelector("#rojo")
+        botonrojo.addEventListener("click", () => {
+            caja.classList.remove("verde", "amarillo", "azul")
+            caja.classList.add("rojo")
+        })
+
+        const botonamarillo = document.querySelector("#amarillo")
+        botonamarillo.addEventListener("click", () => {
+            caja.classList.remove("verde", "azul", "rojo")
+            caja.classList.add("amarillo")
+        })
+
+        const botonazul = document.querySelector("#azul")
+        botonazul.addEventListener("click", () => {
+            caja.classList.remove("verde", "amarillo", "rojo")
+            caja.classList.add("azul")
+        })
+    })
+</script>
+
+</html>

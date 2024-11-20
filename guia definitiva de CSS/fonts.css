@@ -1,0 +1,22 @@
+#lobster{
+    font-family: "Lobster", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 2em;
+}
+
+#example{
+    /*Con font-family elegimos la fuente y el tipo de letra*/
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*Con font-size elegimos el tamaño de letra*/
+    font-size: 25px;
+    /*Con font-style elegimos la modificación de letra*/
+    font-style: oblique 10deg;
+    /*Con font-weight elegimos el grosor de la letra*/
+    font-weight: 500;
+    /*Con color podemos elegir el color de la fuente*/
+    color: violet;
+    /*Con text-align podemos elegir donde alinear la letra*/
+    text-align: right;
+}

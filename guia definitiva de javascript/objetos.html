@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Para definir un objeto lo haremos de la siguiente manera
+    let nombre, serie, edad
+    let personaje = {
+        nombre: "Mickey Mouse",
+        serie: "La casa de Mickey Mouse",
+        edad: 19
+    }
+    console.log(personaje)
+    //Para acceder una propiedad del objeto usaremos .
+    console.log(personaje.serie)
+    //Para cambiar las propiedades haremos esto
+    personaje.edad = 20
+    console.log(personaje)
+    //Para eliminar una propiedad usaremos delete
+    delete personaje.edad
+</script>
+</html>

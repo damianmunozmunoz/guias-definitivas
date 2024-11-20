@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+}
+
+.boxofboxes{
+    border: 3px black solid;
+    width: 95vw;
+    height: 95vh;
+}
+
+.box{
+    border: 3px black solid;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    /*Con align-content podemos alinear el contenido de los elementos verticalmente*/
+    align-content: center;
+}
+
+#box1{
+    /*Display puede tomar varios valores y entre ellos block e inline:
+    - Block hace que los elementos se coloquen uno debajo de otro (opción por defecto)
+    - Inline hace que los elementos se coloquen uno al lado de otro (ocupan el ancho de su contenido)
+    - Inline-block se comporta como inline pero no ignora width y height
+    */
+    display: inline-block;
+}
+
+#box2{
+    display: inline-block;
+    /*Con text-align alinearemos horizontalmente el texto*/
+    text-align: center;
+}
+
+#box3{
+    display: block;
+}
+
+#box4{
+    display: inline;
+}

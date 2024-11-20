@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window</title>
+</head>
+
+<body>
+    <input type="button" value="alertar" id="alertar">
+    <input type="button" value="confirmar" id="confirmar">
+    <input type="button" value="pedir" id="pedir">
+    <input type="button" value="abrir" id="abrir">
+    <input type="button" value="cerrar" id="cerrar">
+    <input type="button" value="retrasar" id="retrasar">
+    <input type="button" value="intervalar" id="intervalar">
+    <div id="i">0</div>
+    <input type="button" value="mover" id="mover">
+    <input type="text" id="url">
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        //window representa la ventana del navegador
+        //window.alert() muestra un cuadro de alerta con un mensaje y un botón aceptar
+        const alertar = document.querySelector("#alertar")
+        alertar.addEventListener("click", () => {
+            window.alert("¡Hola! Esta es una alerta.")
+        })
+
+        /*window.confirm() muestra un cuadro de confirmación con 2 botones:
+        - Aceptar devuelve true
+        - Cancelar devuelve false*/
+        const confirmar = document.querySelector("#confirmar")
+        confirmar.addEventListener("click", () => {
+            let resultado = window.confirm("¿Estás seguro?")
+            window.alert(resultado)
+        })
+
+        /*window.prompt() muestra un cuadro de diálogo que solicita
+        al usuario que ingrese información y devuelve dicho valor
+        o null si se cancela*/
+        const pedir = document.querySelector("#pedir")
+        pedir.addEventListener("click", () => {
+            let nombre = window.prompt("¿Cuál es tu nombre?")
+            window.alert("Hola, " + nombre)
+        })
+
+        /*window.open() abre una nueva ventana o pestaña en el navegador
+        con la URL especificada*/
+        //window.open(URL, nombre, especificaciones, reemplazo)
+        const abrir = document.querySelector("#abrir")
+        abrir.addEventListener("click", () => {
+            //Así podemos pasarle el url que queramos
+            let url = document.querySelector("#url").value
+            /*Para el nombre hay varias especificaciones:
+            _blank abre una nueva ventana
+            _self carga la url en la ventana actual
+            _parent carga la url en el marco padre
+            _top carga la url en la ventana principal*/
+            /*Las especificaciones establecen valores y son estas:
+            width es el ancho de la ventana en píxeles
+            height es el alto de la ventana en píxeles
+            left es la posición horizontal desde el borde izquierdo
+            top es la posición vertical desde el borde superior
+            menubar indica si se muestra la barra de menú
+            toolbar indica si se muestra la barra de herramientas
+            status muestra la barra de estado
+            scrollbars muestra las barras de desplazamiento*/
+            /*El reemplazo puede tomar 2 valores:
+            true hace que la URL reemplace a la entrada actual
+            en el historial
+            false se agregará como una nueva entrada
+            en el historial*/
+            const nuevaVentana = window.open(url, "_blank", "width=500, height=500, left=2100, top=100, menubar=no, toolbar=yes, status=no, scrollbars=no")
+        })
+
+        /*window.close() cierra la ventana actual solo si esta
+        ha sido abierta con window.open()*/
+        const cerrar = document.querySelector("#cerrar")
+        cerrar.addEventListener("click", () => {
+            nuevaVentana.close()
+        })
+
+        /*window.setTimeout() ejecuta una función o porción de código
+        después de un retraso en milisegundos*/
+        const retrasar = document.querySelector("#retrasar")
+        retrasar.addEventListener("click", () => {
+            window.setTimeout(() => {
+                window.alert("Este mensaje aparece después de 3 segundos")
+            }, 3000)
+        })
+
+        /*window.setInterval() ejecuta una función repetidamente con
+        un retraso fijo entre cada ejecución*/
+        const intervalar = document.querySelector("#intervalar")
+        intervalar.addEventListener("click", () => {
+            let i = 0
+            const intervalo = window.setInterval(() => {
+                i++
+                document.querySelector("#i").textContent = i
+            }, 1000)
+            //Añadimos un setTimeout para que pare a los 10 segundos
+            window.setTimeout(() => {
+                window.clearInterval(intervalo)
+            }, 10000)
+        })
+
+        /*window.moveTo(x, y) mueve la ventana a una posición específica
+        y solo funciona si ha sido abierta con window.open()*/
+        const mover = document.querySelector("#mover")
+        mover.addEventListener("click", () => {
+            if (nuevaVentana) {
+                nuevaVentana.moveTo(100, 100)
+                //A los 4 segundos cambiará de posición
+                setTimeout(() => {
+                    nuevaVentana.moveTo(300, 300)
+                }, 4000)
+            } else {
+                window.alert("No se pudo mover la ventana. El navegador podría estar bloqueándolo.")
+            }
+        })
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+
+<body>
+    <input type="date" id="fecha">
+    <input type="button" value="Calcular" id="boton">
+</body>
+<script>
+    //Instancia de un Date()
+    let hoy = new Date() //Si no pasas atributos devuelve la fecha, hora, minuto, segundo y milisegundo del sistema
+    console.log(hoy)
+    /*Las fechas en JavaScript son almacenadas en
+    milisegundos tomando como referencia la 
+    fecha 1 de Enero de 1970 a las 00:00:/
+    /*Hay distintos formatos para declarar Date:
+    Date(año,mes)
+    Date(año,mes,dia)
+    Date(año,mes,dia,hora)
+    Date(año,mes,dia,hora,minuto)
+    Date(año,mes,dia,hora,minuto,segundo)
+    Date(año,mes,dia,hora,minuto,segundo,milisegundo)
+    Date(milisegundos)*/
+    /*Los meses se ponen en un rango de 0 a 11
+    siendo 0 enero y 11 diciembre*/
+    let nacimiento = new Date(2004, 6, 29, 0, 15)
+    console.log(nacimiento)
+    //Hay distintas funciones que podemos usar
+    nacimiento.setDate(26)
+    nacimiento.setMonth(4)
+    nacimiento.setFullYear(2003)
+    console.log(nacimiento)
+    nacimiento.setTime(6003423432) //Establece hora y fecha poniendo milisegundos desde 1/1/1970
+    console.log(nacimiento)
+    //setMinutes() con valores entre 0 y 58
+    //setSeconds()
+    //setMilliseconds()
+    console.log(nacimiento.getDate())
+    console.log(nacimiento.getMonth())
+    console.log(nacimiento.getFullYear())
+    console.log(nacimiento.getTime())
+    //getHours()
+    //getMinutes()
+    //getSeconds()
+    //getMilliseconds()
+    document.addEventListener("DOMContentLoaded", () => {
+        const fecha = document.getElementById("fecha")
+        const boton = document.getElementById("boton")
+
+        boton.addEventListener("click", () => {
+            let hoy = new Date()
+            let nacimientoTexto = fecha.value
+            nacimiento = new Date(nacimientoTexto)
+            let dias = hoy - nacimiento
+            dias = Math.floor(dias / (24 * 60 * 60 * 1000))
+            alert('Hace ' + dias + ' naciste')
+        })
+    })
+</script>
+
+</html>

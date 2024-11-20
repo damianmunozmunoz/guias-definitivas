@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+    <style>
+        select {
+            margin-left: 46vw;
+        }
+
+        #paleta {
+            margin: 10px auto;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="colores" id="colores">
+        <option value="Blanco">Blanco</option>
+        <option value="Negro">Negro</option>
+        <option value="Azul">Azul</option>
+        <option value="Marron">Marron</option>
+        <option value="Gris">Gris</option>
+        <option value="Verde">Verde</option>
+        <option value="Naranja">Naranja</option>
+        <option value="Rosa">Rosa</option>
+        <option value="Purpura">Purpura</option>
+        <option value="Rojo">Rojo</option>
+        <option value="Amarillo">Amarillo</option>
+    </select>
+    <div id="paleta"></div>
+</body>
+<script>
+    /*DOMContentLoaded muestra cuando todo el DOM
+        se ha cargado por completo y conviene ponerlo
+        siempre al principio*/
+    document.addEventListener("DOMContentLoaded", () => {
+        function cambiar() {
+            let cuadrado = document.getElementById("paleta");
+            let color = document.getElementById("colores").value;
+            switch (color) {
+                case "Blanco":
+                    //Así accedemos a propiedades de estilos de los elementos
+                    cuadrado.style.backgroundColor = "white";
+                    break;
+                case "Negro":
+                    cuadrado.style.backgroundColor = "black";
+                    break;
+                case "Azul":
+                    cuadrado.style.backgroundColor = "blue";
+                    break;
+                case "Marron":
+                    cuadrado.style.backgroundColor = "brown";
+                    break;
+                case "Gris":
+                    cuadrado.style.backgroundColor = "grey";
+                    break;
+                case "Verde":
+                    cuadrado.style.backgroundColor = "green";
+                    break;
+                case "Naranja":
+                    cuadrado.style.backgroundColor = "orange";
+                    break;
+                case "Rosa":
+                    cuadrado.style.backgroundColor = "pink";
+                    break;
+                case "Purpura":
+                    cuadrado.style.backgroundColor = "purple";
+                    break;
+                case "Rojo":
+                    cuadrado.style.backgroundColor = "red";
+                    break;
+                case "Amarillo":
+                    cuadrado.style.backgroundColor = "yellow";
+                    break;
+            }
+        }
+
+        const colores = document.querySelector("#colores")
+        colores.addEventListener("change", () => {
+            cambiar()
+        })
+        /*Hay distintos eventos:
+        - change: cuando cambia el estado de un select
+        - click: cuando se pulsa sobre un elemento
+        - DblClick: cuando se hace dobleclick
+        - dragdrop: cuando el usuario suelta algo que había arrastrado sobre la web
+        - error: cuando se produce un error
+        - keydown: cuando un usuario presiona una tecla independientemente que la suelte o no
+        - keypress: cuando el usuario deja pulsada una tecla un tiempo determinado
+        - keyup: cuando el usurio deja de apretar una tecla
+        **las teclas se especifican con keyCode == nº de tecla**
+        - mousedown: cuando el usuario pulsa un elemento independientemente de que se suelte o no
+        - mousemove: cuando el ratón se mueve por la página
+        - mouseout: cuando el ratón sale de un elemento
+        - mouseover: cuando el ratón entra en un elemento
+        - mouseup: cuando el usuario suelta el botón del ratón
+        - move: cuando se mueve la ventana del navegador
+        - resize: cuando se redimensiona la ventana del navegador
+        - reset: cuando en un formulario se hace click en el botón reset
+        - select: cuando se hace un select en un formulario
+        - submit: cuando el usuario hace click en un submit
+        - scroll: cuando se hace scroll
+        */
+    })
+
+</script>
+
+</html>

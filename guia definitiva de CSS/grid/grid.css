@@ -1,0 +1,49 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*Grid divide el div en una malla por filas y columnas*/
+
+.container-grid{
+    display: grid;
+    /*Con grid-template-columns definimos cuantas
+    columnas queremos y en este caso la primera
+    columna ocupará el 50% y el resto lo dividirá
+    en 3 fracciones (fr) iguales de las que 2 serán
+    de la segunda columna y 1 de la tercera columna*/
+    grid-template-columns: 50% 2fr 1fr;
+    /*Con grid-template-rows definimos cuantas
+    filas queremos y se pueden definir al igual que 
+    las columnas. Tanto a filas como a columnas podemos
+    asignarles nombres si los ponemos entre [] antes de
+    definirlas. Con repeat() podremos crear filas y columnas
+    repetidas tantas veces como queramos*/
+    grid-template-rows: repeat(4 100px);
+    /*Para añadir espacio entre los cuadrados del grid
+    usamos gap: filas columnas*/
+    /*gap: 20px 30px;*/
+    width: 90vw;
+    margin: auto;
+    /*border: solid black 2px;*/
+    height: 800px;
+}
+
+.container-grid > div{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-grid :nth-child(1){
+    background-color: red;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    /*Otra manera de poner esto es
+    grid: 1 3 2 4
+    Siguiendo el esquema de
+    grid: column-start column-end row-start row-end*/
+}

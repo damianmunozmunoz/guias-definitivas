@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrays</title>
+</head>
+
+<body>
+    <div id="alumnos">
+        <p>Alioui , Akram Souheib</p>
+        <p>Arias Perez, Lorena</p>
+        <p>Baldero Casbas, Pablo</p>
+        <p>Baz Marin, Inés</p>
+        <p>Blasco Gimeno, Alejandro</p>
+        <p>Carrasquer Gonzalvo, Juan</p>
+        <p>Ferrer Bielsa, Adrian Julian</p>
+        <p>Godoy Galindo, Daniel</p>
+        <p>Gracia Portero, Alba</p>
+        <p>Gutiérrez González, Javier</p>
+        <p>Jiménez Marín, David</p>
+        <p>Laita Bellido, Álvaro</p>
+        <p>Miralles Quesada, Rafael</p>
+        <p>Muñoz Muñoz, Damián</p>
+        <p>Pardos Matas, Alberto</p>
+        <p>Rebollo Lázaro, Samuel</p>
+        <p>Solé Jiménez, Edgar</p>
+        <p>Soler Mainar, Eloy</p>
+        <p>Tarbu , Robert</p>
+        <p>Torre Tolosana, Alberto</p>
+        <p>Carnicer Embid, Miguel</p>
+        <button id="sorteo">SORTEO</button>
+        <button id="reiniciar" style="display:none">REINICIAR</button>
+    </div>
+</body>
+<script>
+    //Definición de arrays
+    let animales = ['cerdo', 'caballo']
+    console.log(animales)
+    //Acceso a un elemento
+    console.log(animales[1])
+    //Adición de elementos
+    animales[2] = 'dragón'
+    console.log(animales)
+    //Acceso a la longitud del array
+    console.log(animales.length)
+
+    document.addEventListener("DOMContentLoaded", () => {
+        //Con querySelectorAll nos devuelve un HTML Collection
+        let alumnos = document.querySelectorAll("p")
+        //Con Array.of transformamos esa HTML Collection en un array
+        let alumnosarray = Array.of(alumnos)
+        alumnos.forEach((alumno) => {
+            
+        })
+    })
+</script>
+
+</html>

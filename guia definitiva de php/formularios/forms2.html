@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <form name="trabajos" id="trabajos" action="forms.php" method="post">
+        <label for="choose">Elija un sector</label>
+        <!--Con select podemos hacer al cliente elegir entre varias opciones-->
+        <select name="sector" id="sector">
+            <option value="0">Electricista</option>
+            <option value="1">Albañil</option>
+            <option value="2">Fontanero</option>
+            <option value="3">Carpintero</option>
+            <option value="4">Transportista</option>
+        </select>
+        <input type="submit" value="ENVIAR" name="sendbtn" id="sendbtn"/>
+    </form>
+    <form name="datos" id="datos" action="forms.php" method="post">
+        <label for="nombre">Introduzca un nombre: </label>
+        <input type="text" name="name" id="name"/>
+        <br>
+        <label for="hijos">¿Tienes hijos? </label>
+        <input type="checkbox" name="children" id="children">
+        <br>
+        <label for="edad">Rango de edad </label>
+        <br>
+        De 0 a 10 años <input type="radio" value="1" name="years"/>
+        <br>
+        De 11 a 20 años <input type="radio" value="2" name="years"/>
+        <br>
+        Más de 20 años <input type="radio" value="3" name="years"/>
+        <br>
+        <input type="hidden" name="hiddenElement" id="hiddenElement" value="Esto no se muestra"/>
+        <input type="submit" value="ENVIAR" name="sendBtn" id="sendBtn"/>
+    </form>
+</body>
+</html>

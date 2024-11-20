@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+}
+/*Flex tiene algunos elementos básicos que debemos conocer:
+- Contenedor: elemento padre que tendrá en su interior
+              cada uno de los items flexibles. Aquí
+              estableceremos las propiedades al elemento padre
+- Eje principal: será el horizontal
+- Eje secundario: será el vertical
+- Item: cada uno de los hijos que tendrá el contenedor
+*/
+.container{
+    /*Podremos especificar el flex de 2 maneras:
+    - flex: establece un contenedor en bloque y los hijos
+            ocuparán todo el ancho del padre
+    - inline-flex: establece un contenedor en linea y los
+                   hijos ocuparán solo el contenido
+    */
+    display: inline-flex;
+    /*Con flex-direction podemos especificar la dirección
+    del eje principal y podemos tomar los valores:
+    - row   - row-reverser  -column -column-reverse
+    */
+    flex-direction: row;
+    /*Con flex al modificar el tamaño de la ventana del
+    navegador se modifica el tamaño de los elementos.
+    Con flex-wrap podemos elegir que esto suceda o que
+    no con los siguientes valores:
+    - nowrap: los elementos son flexibles
+    - wrap: los elementos en fila se pasan a la siguiente
+            línea
+    - wrap-reverse: lo mismo que wrap pero a la inversa
+    */
+    flex-wrap: wrap;
+    /*Con justify-content podemos colocar los elementos en
+    el eje horizontal de distintas maneras*/
+    /*end coloca todos los elementos al final*/
+    justify-content: end;
+    /*Con align-items podemos colocar los elementos en el
+    eje vertical de distintas maneras*/
+    /*end coloca todos los elementos al final*/
+    align-items: end;
+    /*Con align-content podemos colocar los elementos en
+    el eje vertical de distintas maneras si están en un
+    contenedor de varias lineas*/
+    /*end coloca todos los elementos al final*/
+    align-content: end;
+    width: 97vw;
+    height: 30vh;
+    border: black solid;
+    margin: 2px;
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    border: black solid;
+    margin: 5px;
+    align-content: center;
+    text-align: center;
+}
+
+#container1{
+    /*start coloca todos los elementos al principio*/
+    justify-content: start;
+    align-items: start;
+}
+
+#uno{
+    /*Con order podemos ordenar manualmente el orden
+    de aparición de los items*/
+    /*Este saldrá segundo*/
+    order: 2;
+}
+
+#dos{
+    /*Este saldrá tercero*/
+    order: 3;
+}
+
+#tres{
+    /*Este saldrá primero*/
+    order: 1;
+}
+
+#container3{
+    /*center coloca los elementos en el centro*/
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#container4{
+    /*space-between coloca los elementos con espacio
+    entre ellos*/
+    justify-content: space-between;
+    
+}
+
+#container5{
+    /*space-around coloca los elementos con espacio
+    alrededor de ellos*/
+    justify-content: space-around;
+}
+
+#trece, #catorce, #quince{
+    /*Con las siguientes funciones podemos dar flexibilidad
+    a los elementos hijos de un contenedor flex:
+    - flex-basis: tamaño base de los items antes de la variación
+    - flex-grow: número que indica el factor de crecimiento del item
+    - flex-shrink: número que indica el factor de decrecimiento del item*/
+    flex-basis: 200px;
+}
+
+#trece{
+    /*Con flex-grow especificamos el factor de crecimiento y
+    siempre buscará que la suma total de los items ocupe
+    el 100% del contenedor*/
+    flex-grow: 1;
+    background-color: red;
+}
+
+#catorce{
+    flex-grow: 3;
+    background-color: blue;
+}
+
+#quince{
+    flex-grow: 2;
+    background-color: green;
+}
+
+#dieciseis, #diecisiete, #dieciocho{
+    flex-basis: 400px;
+}
+
+#dieciseis{
+    /*Con flex-shrink podemos hacer los mismo que con
+    flex-grow pero a la inversa, es decir, a mayor sea el
+    factor de decrecimiento más pequeño será el contenedor*/
+    flex-shrink: 5;
+    background-color: red;
+}
+
+#diecisiete{
+    flex-shrink: 3;
+    background-color: blue;
+}
+
+#dieciocho{
+    flex-shrink: 7;
+    background-color: green;
+}
+
+#diez, #once, #doce{
+    /*Un atajo para usar estas propiedades es el siguiente:
+    flex: <flex-grow> <flex-shrink> <flex-basis>*/
+    flex: 0 1 15%;
+    transition: all 0.5s;
+}
+
+#diez:hover{
+    flex: 1 1 10%;
+    background-color: red;
+}
+
+#once:hover{
+    flex: 1 1 10%;
+    background-color: blue;
+}
+
+#doce:hover{
+    flex: 1 1 10%;
+    background-color: green;
+}
+
+#container6{
+    /*space-evenly coloca los elementos con el mismo
+    espacio entre ellos que alrededor*/
+    justify-content: space-evenly;
+    /*stretch estira los items hasta que cubran todo
+    el contenedor verticalmente*/
+    align-items: stretch;
+}
+
+#container7{
+    /*start coloca todos los elementos al principio*/
+    align-content: start;
+    height: 350px;
+}
+
+#container8{
+    /*center coloca los elementos en el centro*/
+    align-content: center;
+    height: 350px;
+}
+
+#container9{
+    /*space-between coloca los elementos con espacio
+    entre ellos*/
+    align-content: space-between;
+    height: 350px;
+}
+
+#container10{
+    /*space-around coloca los elementos con espacio
+    alrededor de ellos*/
+    align-content: space-around;
+    height: 350px;
+}
+
+#container11{
+    /*stretch estira los items hasta que cubran todo
+    el contenedor verticalmente*/
+    align-content: stretch;
+    height: 350px;
+}
+
+#container12{
+    height: 350px;
+}

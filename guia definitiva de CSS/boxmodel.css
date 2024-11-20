@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+}
+
+/*Las clases se empiezan con un . y los ids con un #*/
+.boxofboxes{
+    width: 90%;
+    height: 90%;
+    border: 5px black solid;
+}
+
+.box{
+    display: auto;
+    /*Con width elegimos el ancho y con height el alto*/
+    width: 100px;
+    height: 100px;
+    /*Con background-color elegiremos el color del fondo*/
+    background-color: salmon;
+    /*Las cajas se dividen en 4 partes:
+    - margin: es lo que está por fuera del borde de la caja
+    - border: separa el interior y exterior de la caja
+    - padding: distancia entre el borde y el contenido
+    - content: contenido de la caja:
+    */
+    margin: 1%;
+    /*Los bordes se pueden poner de distintos colores y también
+    de los siguientes tipos:
+    - hidden    - dotted    - dashed
+    - solid     - double    - groove
+    - ridge     - inset     - outset
+    */
+    border: 5px black solid;
+    padding: 10px;
+}
+
+#box1{
+    border: dashed;
+    background-color: lightblue;
+    /*Con border-radius podemos redondear las esquinas*/
+    border-radius: 100% 50%;
+}
+
+#box2{
+    border: dotted;
+    /*Podemos personalizar los colores con un # en hexadecimal
+    o con la función rgb()*/
+    background-color: rgb(140, 10, 12);
+    border-radius: 10px 0px 60px 30px;
+}
+
+#box3{
+    border: groove;
+    background-color: lightgreen;
+    border-radius: 20vw 30vw;
+}
+
+#box4{
+    border-radius: 3% 40vw 10px;
+    border-image-source: linear-gradient(blue, orange);
+    border-image-slice: 1 1 1 1 fill;
+    border-image-width: 10px;
+}
+
+#box5{
+    /*Podemos añadir imagenes de fondo de divs desde css*/
+    background-image: url(pikachu.png);
+    /*Podemos hacer que se repita en cuadricula por el div
+    o no con la propiedad background-repeat poniendo
+    repeat o no-repeat*/
+    background-repeat: repeat;
+    /*También podemos elegir la posición de la imagen con
+    background-position*/
+    background-position: center;
+    /*Por último podemos elegir el tamaño de la imagen
+    con background-size y podemos especificar un valor o
+    poner los valores contain o cover*/
+    background-size: contain;
+}
+
+.example-button{
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    /*Con border-image-source podemos añadir gradientes*/
+    border-image-source: linear-gradient(indigo, purple, hotpink);
+    border-image-slice: 1 1 1 1 fill;
+    border-image-width: 1rem;
+
+}

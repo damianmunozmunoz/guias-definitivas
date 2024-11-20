@@ -1,0 +1,35 @@
+.boxofboxes{
+    background-color: lightblue;
+    /*Píxeles de la pantalla*/
+    width: 900px;
+    height: 600px;
+}
+
+.box{
+    border: 3px black solid
+}
+
+#box1{
+    /*Viewport width y height representan el %
+    de la parte visible de la pantalla*/
+    width: 10vw;
+    height: 10vh;
+    background-color: white;
+}
+
+#box2{
+    /*Porcentaje representa el % del padre
+    que lo contiene*/
+    width: 10%;
+    height: 10%;
+    background-color: whitesmoke;
+}
+
+#box3{
+    /*em y rem son unidades basadas
+    del tamaño de la tipografía*/
+    font-size: 25px;
+    width: 10em;
+    height: 15rem;
+    background-color: grey;
+}

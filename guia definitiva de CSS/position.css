@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+}
+
+.contenedor{
+    width: 98.5vw;
+    height: 99vh;
+    border: 3px black solid;
+}
+
+.item{
+    width: 15%;
+    height: 15%;
+    border: 3px black solid;
+}
+
+/*Con position podemos especificar como aparecerán los elementos
+en vez de usar las propiedades del display
+Hay 5 valores que puede tomar position y los veremos a continuación*/
+/*STATIC*/
+/*Utiliza el orden natural de los elementos HTML y es el valor por defecto*/
+#contenedor1{
+    position: static;
+}
+
+/*RELATIVE*/
+/*En este modo los elementos se colocan igual que con static pero podremos
+moverlos con top, bottom, left y right*/
+#item6{
+    position: relative;
+    top: 30px;
+    left: 50px;
+    background-color: lime;
+}
+
+#item7{
+    position: relative;
+    top: 60px;
+    left: 40px;
+    background-color: purple;
+}
+
+#item8{
+    position: relative;
+    top: 100px;
+    left: 400px;
+    background-color: yellow;
+}
+
+#item9{
+    position: relative;
+    top: 20px;
+    left: 70px;
+    /*Con z-indez podemos especificar que elementos estarán delante
+    de otros
+    A más valor en el z-index en mayor capa estará*/
+    z-index: 2;
+    background-color: red;
+}
+
+#item10{
+    position: relative;
+    top: -10px;
+    left: 10px;
+    z-index: 1;
+    background-color: blue;
+}
+
+/*ABSOLUTE*/
+/*Cuando ponemos un elemento en posición absoluta este verificará
+si el elemento padre directo tiene posición estática y en caso
+contrario utulizará el elemento padre para posicionarlo
+Si el elemento padre directo tiene posicionamiento estático
+seguirá subiendo en padres hasta encontrar uno que no lo tenga
+y tomará ese elemento padre como referencia para posicinarse*/
+.contenedor2{
+    width: 70vw;
+    height: 70vh;
+    background-color: lightgreen;
+    margin: 30px;
+    padding: 30px;
+    /*Añadimos a este elemento la posición relativa para que no tenga
+    la posición estática que es la que se pone por defecto*/
+    position: relative;
+}
+
+.contenedor3{
+    width: 40vw;
+    height: 40vh;
+    background-color: lightblue;
+}
+
+#itemabsoluto{
+    /*Este objeto se colocará en función del contenedor2 ya que el
+    contenedor3 es estático y, por tanto, lo ignora*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*FIXED*/
+/*Es bastante parecido al posicionamiento absoluto puesto que
+también ignora los elementos padre estaticos a la hora de
+posicionarse pero además hace que el elemento fijo se quede así,
+fijo en la pantala aunque hagamos scroll en la página
+Esto viene bien para banners de publicidad o menús que tienen
+que estar todo el rato en pantalla*/
+#itemfijo{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+/*sTICKY*/
+/*El posicionamiento sticky es para cuando queremos que un elemento
+se quede fijo pero solo a una altura determinada según hagamos scroll*/
+#contenedor4{
+    position: relative
+}
+
+#itemsticky{
+    position: sticky;
+}
+
+
